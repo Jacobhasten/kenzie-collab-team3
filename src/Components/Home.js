@@ -5,6 +5,7 @@ import styled from "styled-components";
 import styles from "./Styles";
 import {Link} from "react-router-dom";
 
+
 function Home(props) {
         
     
@@ -23,8 +24,9 @@ function Home(props) {
             <p>Educational Acitivities</p>
             <input type="checkbox" name="educational"
             defaultChecked={props.selectedCategories.includes('educational')}
-            onChange={props.handleCheckbox}/>
-        </>
+            onChange={props.onHandleCheckbox}/>
+            <Link to="/generator">Generator</Link>
+           </>
         )
 
 }
