@@ -8,38 +8,47 @@ import { ReactComponent as Header} from '../assets/Nav/Header.svg';
 import { ReactComponent as Footer} from '../assets/Nav/Footer.svg';
 import { createGlobalStyle } from 'styled-components';
 
-export const colors = {
-    primary: {
-        main: '#1E96FC',
-        dark: '#072AC8',
-        light: '#A2D6F9'
-    },
-    secondary: {
-        main: '#FCF300',
-        dark: '#FFC600'
+export default function styles(props) {
+    const colors = {
+        primary: {
+            main: '#1E96FC',
+            dark: '#072AC8',
+            light: '#A2D6F9'
+        },
+        secondary: {
+            main: '#FCF300',
+            dark: '#FFC600'
+        }
     }
-}
+    const GlobalStyles = createGlobalStyle`
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        position: relative;
+        font-family: "Grandstander", cursive;
+    }
+    `;
+    const Nav = styled.footer`
+        position: fixed;
+        bottom: 0;
+    `;
+    const HeaderStyle = styled.header`
+        width: 100%;
+    `;
 
-const GlobalStyles = createGlobalStyle`
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    position: relative;
-    font-family: "Grandstander", cursive;
-}
-`;
+    const Headline = styled.h1`
+        text-align: center;
+        width: 90%;
+        margin:  20px auto;
+        color: ${colors.primary.dark};
+    `;
 
-const Nav = styled.footer`
-    position: fixed;
-    bottom: 0;
-`;
-const HeaderStyle = styled.header`
-    width: 100%;
-`;
-
-export default function globalNav(props) {
-    return ( 
+    const NavButton = styled.button`
+    color: ${colors.secondary.main}
+    `;
+    const NavButtonLabel = styled.p;
+    return (
         <>
         <GlobalStyles />
         <HeaderStyle><Header /></HeaderStyle>
@@ -47,7 +56,14 @@ export default function globalNav(props) {
         <Nav>
         <Footer />
         </ Nav>
-        </>
-    );
-}
+        </>);
+};
 
+function navButton(props) {
+    return (
+    <>
+    <NavButton>${props.icon}</NavButton>
+    <NavButtonLabel>${props.label}</NavButtonLabel>
+    </>
+    )
+};

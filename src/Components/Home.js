@@ -2,15 +2,7 @@ import React from "react"
 import "../App.scss";
 import shortid from "shortid";
 import styled from "styled-components";
-import globalNav from "./Styles";
-import { colors } from "./Styles";
-
-const Headline = styled.h1`
-    text-align: center;
-    width: 90%;
-    margin:  20px auto;
-    color: ${colors.primary.dark};
-`;
+import styles from "./Styles";
 
 class Home extends React.Component {
     state = {
@@ -82,8 +74,8 @@ class Home extends React.Component {
 
     render() {
         return(
-           globalNav(<> 
-            <Headline>What types of activities would you like Jake to do today?</Headline>
+        <> 
+            <h1>What types of activities would you like Jake to do today?</h1>
 
             <p>Creative Activities</p>
             <input type="checkbox" name="creative" 
@@ -97,7 +89,7 @@ class Home extends React.Component {
             <input type="checkbox" name="educational"
             defaultChecked={this.state.selectedCategories.includes('educational')}
             onChange={this.handleCheckbox}/>
-           </>)
+        </>
         )
     }
 }
