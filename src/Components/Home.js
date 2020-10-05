@@ -1,6 +1,7 @@
 import React from "react"
 import "../App.scss";
 import shortid from "shortid";
+import globalNav from "./Styles"
 
 class Home extends React.Component {
     state = {
@@ -72,7 +73,7 @@ class Home extends React.Component {
 
     render() {
         return(
-           <> 
+           globalNav(<> 
             <h1>What types of activities would you like Jake to do today?</h1>
 
             <p>Creative Activities</p>
@@ -87,7 +88,7 @@ class Home extends React.Component {
             <input type="checkbox" name="educational"
             defaultChecked={this.state.selectedCategories.includes('educational')}
             onChange={this.handleCheckbox}/>
-           </>
+           </>)
         )
     }
 }
