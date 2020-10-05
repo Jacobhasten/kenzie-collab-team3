@@ -1,13 +1,16 @@
 import React from "react"
 import "../App.scss";
 import shortid from "shortid";
+import styled from "styled-components";
+import styles from "./Styles";
 import {Link} from "react-router-dom";
+
 
 function Home(props) {
         
     
         return(
-           <> 
+        <> 
             <h1>What types of activities would you like Jake to do today?</h1>
 
             <p>Creative Activities</p>
