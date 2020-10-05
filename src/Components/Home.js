@@ -1,6 +1,8 @@
 import React from "react"
 import "../App.scss";
 import shortid from "shortid";
+import globalNav from '../Components/Styles.js';
+
 
 class Home extends React.Component {
     state = {
@@ -71,6 +73,7 @@ class Home extends React.Component {
 
     render() {
         return(
+            globalNav(
            <> 
             <h1>What types of activities would you like Jake to do today?</h1>
 
@@ -81,6 +84,7 @@ class Home extends React.Component {
             <p>Educational Acitivities</p>
             <input type="checkbox" name="educational"/>
            </>
+           )
         )
     }
 }
