@@ -14,6 +14,16 @@ body {
     padding: 0;
     height: 100%;
     position: relative;
+    
+    @font-face {
+        font-family: "Grandstander", cursive;
+        src: url("https://fonts.googleapis.com/css2?family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      }
+      
+      @font-face {
+        font-family: "Risque", cursive;
+        src: url("https://fonts.googleapis.com/css2?family=Risque&display=swap");
+      }
 }
 `;
 
