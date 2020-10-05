@@ -1,7 +1,16 @@
 import React from "react"
 import "../App.scss";
 import shortid from "shortid";
-import globalNav from "./Styles"
+import styled from "styled-components";
+import globalNav from "./Styles";
+import { colors } from "./Styles";
+
+const Headline = styled.h1`
+    text-align: center;
+    width: 90%;
+    margin:  20px auto;
+    color: ${colors.primary.dark};
+`;
 
 class Home extends React.Component {
     state = {
@@ -74,7 +83,7 @@ class Home extends React.Component {
     render() {
         return(
            globalNav(<> 
-            <h1>What types of activities would you like Jake to do today?</h1>
+            <Headline>What types of activities would you like Jake to do today?</Headline>
 
             <p>Creative Activities</p>
             <input type="checkbox" name="creative" 

@@ -8,7 +8,7 @@ import { ReactComponent as Header} from '../assets/Nav/Header.svg';
 import { ReactComponent as Footer} from '../assets/Nav/Footer.svg';
 import { createGlobalStyle } from 'styled-components';
 
-const colors = {
+export const colors = {
     primary: {
         main: '#1E96FC',
         dark: '#072AC8',
@@ -22,15 +22,6 @@ const colors = {
 
 const GlobalStyles = createGlobalStyle`
 body {
-    @font-face {
-        font-family: "Grandstander", cursive;
-        src: url("https://fonts.googleapis.com/css2?family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap");
-      }
-      
-      @font-face {
-        font-family: "Risque", cursive;
-        src: url("https://fonts.googleapis.com/css2?family=Risque&display=swap");
-      }
     margin: 0;
     padding: 0;
     height: 100%;
