@@ -58,7 +58,7 @@ class App extends React.Component {
       },
     ],
     selectedCategories: [],
-    unfilteredAcitivies: [],
+    unfliteredActivities: this.handleFilteredActivities,
   }
   handleCheckbox = event => {
     let name = event.target.name;
@@ -73,6 +73,18 @@ class App extends React.Component {
       return { selectedCategories: newCategories }
     })
   }
+  // handleFilteredActivities = (id) => {
+  //   this.setState((state) => {
+
+  //     let filteredList = state.activities.filter(item => {
+  //       if (item.id === id && this.state.selectedCategories.includes(item.category)){
+  //         return {...item, activity: item.activty}
+  //       } 
+  //       return item
+  //     })
+  //     return {unfilteredActivities: filteredList}
+  //   })
+  // }
   render() {
     return (
       <>
@@ -81,7 +93,8 @@ class App extends React.Component {
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
-              onHandleCheckbox={this.handleCheckbox} />
+              onHandleCheckbox={this.handleCheckbox}
+              handleFilteredActivities={this.handleFilteredActivities} />
           </Route>
           <Route path="/generator">
             <Generator/>
