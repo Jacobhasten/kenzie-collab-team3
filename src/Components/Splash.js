@@ -1,25 +1,22 @@
-import React from 'react';
-import {useSpring} from 'react-spring';
-import logo from '../assets/Splash_Screen/Rejoyce_ Logo.png';
+import React, { useEffect } from "react";
+import { Spring } from "react-spring/renderprops";
+import logo from "../assets/Splash_Screen/Rejoyce_ Logo.png";
+import "../App.scss";
+import { withRouter } from "react-router-dom";
 
 function Splash() {
+
   return (
-      <useSpring
-      from={{ opacity: 0, }}
-      to={{ opacity: 1, mrginTop: 3 }}
-      config={{ delay: 1000, duration: 1000 }}
-    >
+    <Spring from={{ opacity: 0 }} to={{ opacity: 1, mrginTop: 3 }} config={{ delay: 1000, duration: 1000 }}>
       {(props) => (
-        <div>
-          <div>
-          <img src ={logo}/>
+        <div className="background">
+          <div style={props}>
+            <img src={logo} />
           </div>
         </div>
       )}
-    </useSpring>
-  )
-
+    </Spring>
+  );
 }
 
-export default Splash;
-
+export default withRouter(Splash);
