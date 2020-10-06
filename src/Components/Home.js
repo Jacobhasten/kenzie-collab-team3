@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import React from "react"
+import React from 'react';
 import "../App.scss";
 import styled from "styled-components";
 import { colors } from "./Styles";
@@ -19,7 +18,9 @@ function Home(props) {
     
         return(
         <> 
-        
+
+        {<Splash>}
+
             <Headline>What types of activities would you like Jake to do today?</Headline>
             
             <p>Creative Activities</p>
@@ -35,6 +36,8 @@ function Home(props) {
             defaultChecked={props.selectedCategories.includes('educational')}
             onChange={props.onHandleCheckbox}/>
             <Link to="/generator">Generator</Link>
+
+            {</Splash>}
            </>
         )
 

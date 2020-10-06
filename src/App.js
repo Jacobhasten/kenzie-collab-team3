@@ -59,8 +59,7 @@ class App extends React.Component {
         reward: 15,
       },
     ],
-    selectedCategories: [],
-    unfliteredActivities: this.handleFilteredActivities,
+    selectedCategories: []
   }
 
   componentDidMount() {
@@ -82,18 +81,24 @@ class App extends React.Component {
       return { selectedCategories: newCategories }
     })
   }
-  // handleFilteredActivities = (id) => {
-  //   this.setState((state) => {
+  
+  handleFilteredActivities = (id) => {
+    // 1 get selectedCategories to a variable this.state.
+    // 2 activities list array.filter
+    // 3 return updated array that excludes activities that werent selected
+    // 4 final array.math.random
+    // update activities state to random selected activity
+      let newArray = []
+      this.state.activities.filter(item => {
+        
+        if (this.state.selectedCategories.includes(item.category)){
+          newArray.push(item)
+        } 
+      })
+      console.log(newArray)
+  }
 
-  //     let filteredList = state.activities.filter(item => {
-  //       if (item.id === id && this.state.selectedCategories.includes(item.category)){
-  //         return {...item, activity: item.activty}
-  //       } 
-  //       return item
-  //     })
-  //     return {unfilteredActivities: filteredList}
-  //   })
-  // }
+
   render() {
     if (this.state.isShowingSplashScreen) {
       return <Splash />
@@ -107,10 +112,11 @@ class App extends React.Component {
             <Home
               selectedCategories={this.state.selectedCategories}
               onHandleCheckbox={this.handleCheckbox}
-              handleFilteredActivities={this.handleFilteredActivities} />
+              />
           </Route>
           <Route path="/generator">
-            <Generator/>
+            <Generator
+            onHandleFilteredActivities={this.handleFilteredActivities}/>
           </Route>
         </Switch>
       </>
