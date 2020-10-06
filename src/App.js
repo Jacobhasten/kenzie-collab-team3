@@ -8,6 +8,7 @@ import  Splash from "./Components/Splash";
 
 class App extends React.Component {
   state = {
+    isShowingSplashScreen: true,
     activities: [
       {
         id: shortid.generate(),
@@ -62,6 +63,12 @@ class App extends React.Component {
     unfliteredActivities: this.handleFilteredActivities,
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({isShowingSplashScreen: false})
+    }, 4000)
+  }
+
   handleCheckbox = event => {
     let name = event.target.name;
     let isChecked = event.target.checked;
@@ -88,6 +95,9 @@ class App extends React.Component {
   //   })
   // }
   render() {
+    if (this.state.isShowingSplashScreen) {
+      return <Splash />
+    }
     return (
       <>
       
