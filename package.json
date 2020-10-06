@@ -11,9 +11,11 @@
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
     "short-id": "0.1.0-1",
+    "shortid": "^2.2.15",
     "styled-components": "^5.2.0"
   },
   "scripts": {
@@ -36,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/icons-bx": "^1.0.3",
+    "@iconify/icons-fa-regular": "^1.0.6",
+    "@iconify/react": "^1.1.3"
   }
 }

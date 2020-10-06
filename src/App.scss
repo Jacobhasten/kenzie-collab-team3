@@ -1,5 +1,15 @@
-:root{
-$primary-color: blue;
+:root {
+  $primary-color: #072ac8;
+}
+
+@font-face {
+  font-family: "Grandstander", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Grandstander:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+
+@font-face {
+  font-family: "Risque", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Risque&display=swap");
 }
 
 * {
@@ -8,40 +18,31 @@ $primary-color: blue;
   box-sizing: border-box;
 }
 
+main {
+}
 
-// main {
+img {
+}
 
-// }
+h1 {
+}
 
-// img {
+h2 {
+}
 
-// }
+h3 {
+}
 
-// h1 {
+h4 {
+}
 
-// }
+h5 {
+}
 
-// h2 {
+p {
+}
 
-// }
-
-// h3 {
-
-// }
-
-// h4 {
-
-// }
-
-// h5 {
-
-// }
-
-// p {
-
-// }
-
-button{
+button {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
@@ -53,20 +54,15 @@ button{
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   &:hover {
-    background:black
+    background: black;
   }
-  &:focus, &:active {
-    outline:0;
-    background: gray; 
+  &:focus,
+  &:active {
+    outline: 0;
+    background: gray;
   }
 }
-
-
-
-
-
