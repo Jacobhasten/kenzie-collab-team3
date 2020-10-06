@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react';
 import "../App.scss";
-import shortid from "shortid";
 import styled from "styled-components";
 import { colors } from "./Styles";
 import Nav from "./Nav.js";
 import {Link} from "react-router-dom";
+import Splash from './Splash';
 
 const Headline = styled.h1`
         text-align: center;
@@ -61,7 +61,11 @@ function Home(props) {
     
         return(
         <> 
+
         <Nav />
+
+
+        <Splash>
             <Headline>What types of activities would you like Jake to do today?</Headline>
             <ToggleWrapper>
             <p>Creative Activities</p>
@@ -81,6 +85,8 @@ function Home(props) {
             <Toggle><ToggleButton/></Toggle>
             </ToggleWrapper>
             <Link to="/generator">Generator</Link>
+
+            </Splash>
            </>
         )
 

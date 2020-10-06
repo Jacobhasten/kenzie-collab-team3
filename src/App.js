@@ -4,9 +4,11 @@ import shortid from "shortid";
 import Home from "./Components/Home"
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
+import  Splash from "./Components/Splash";
 
 class App extends React.Component {
   state = {
+    isShowingSplashScreen: true,
     activities: [
       {
         id: shortid.generate(),
@@ -57,9 +59,15 @@ class App extends React.Component {
         reward: 15,
       },
     ],
-    selectedCategories: [],
-    unfilteredAcitivies: [],
+    selectedCategories: []
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({isShowingSplashScreen: false})
+    }, 4000)
+  }
+
   handleCheckbox = event => {
     let name = event.target.name;
     let isChecked = event.target.checked;
@@ -73,18 +81,42 @@ class App extends React.Component {
       return { selectedCategories: newCategories }
     })
   }
+  
+  handleFilteredActivities = (id) => {
+    // 1 get selectedCategories to a variable this.state.
+    // 2 activities list array.filter
+    // 3 return updated array that excludes activities that werent selected
+    // 4 final array.math.random
+    // update activities state to random selected activity
+      let newArray = []
+      this.state.activities.filter(item => {
+        
+        if (this.state.selectedCategories.includes(item.category)){
+          newArray.push(item)
+        } 
+      })
+      console.log(newArray)
+  }
+
+
   render() {
+    if (this.state.isShowingSplashScreen) {
+      return <Splash />
+    }
     return (
       <>
+      
+      
         <Switch>
-          
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
-              onHandleCheckbox={this.handleCheckbox} />
+              onHandleCheckbox={this.handleCheckbox}
+              />
           </Route>
           <Route path="/generator">
-            <Generator/>
+            <Generator
+            onHandleFilteredActivities={this.handleFilteredActivities}/>
           </Route>
         </Switch>
       </>
