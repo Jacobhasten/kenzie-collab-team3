@@ -1,7 +1,7 @@
 import React from "react";
 import bxLogOut from "@iconify/icons-bx/bx-log-out"; //This is the log-out icon
 import playCircle from "@iconify/icons-fa-regular/play-circle"; //This is the Home icon
-import Add_Activity_Icon from '../assets/Footer_Icons/Add_Activity_Icon.png';
+import Add_Activity_Icon from '../assets/Footer_Icons/Add_Activity_Icon_png.png';
 import { Icon, InlineIcon } from "@iconify/react";
 import styled from "styled-components";
 import { colors } from "./Styles.js";
