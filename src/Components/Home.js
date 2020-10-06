@@ -2,17 +2,25 @@ import React from "react"
 import "../App.scss";
 import shortid from "shortid";
 import styled from "styled-components";
-import styles from "./Styles";
+import { colors } from "./Styles";
+import Nav from "./Nav.js";
 import {Link} from "react-router-dom";
 
+const Headline = styled.h1`
+        text-align: center;
+        width: 90%;
+        margin:  20px auto;
+        color: ${colors.primary.dark};
+    `;
 
 function Home(props) {
         
     
         return(
         <> 
-            <h1>What types of activities would you like Jake to do today?</h1>
-
+        <Nav>
+            <Headline>What types of activities would you like Jake to do today?</Headline>
+            
             <p>Creative Activities</p>
             <input type="checkbox" name="creative" 
             defaultChecked={props.selectedCategories.includes('creative')}
@@ -26,6 +34,7 @@ function Home(props) {
             defaultChecked={props.selectedCategories.includes('educational')}
             onChange={props.onHandleCheckbox}/>
             <Link to="/generator">Generator</Link>
+            </Nav>
            </>
         )
 
