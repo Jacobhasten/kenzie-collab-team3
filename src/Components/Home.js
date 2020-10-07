@@ -83,19 +83,19 @@ function Home(props) {
             <CategoryList>
             <ToggleWrapper>
             <Category><p>Creative Activities</p>
-            <ToggleCheckbox type="checkbox" name="creative" 
+            <input type="checkbox" name="creative" 
             defaultChecked={props.selectedCategories.includes('creative')}
             onChange={props.onHandleCheckbox}/>
             <Toggle><ToggleButton/></Toggle>
             </Category>
             <Category><p>Physical Acitivities</p>
-            <ToggleCheckbox type="checkbox" name="physical"
+            <input type="checkbox" name="physical"
             defaultChecked={props.selectedCategories.includes('physical')}
             onChange={props.onHandleCheckbox}/>
             <Toggle><ToggleButton/></Toggle>
             </Category>
             <Category><p>Educational Acitivities</p>
-            <ToggleCheckbox type="checkbox" name="educational"
+            <input type="checkbox" name="educational"
             defaultChecked={props.selectedCategories.includes('educational')}
             onChange={props.onHandleCheckbox} />
             <Toggle><ToggleButton/></Toggle>
