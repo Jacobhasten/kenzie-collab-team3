@@ -4,7 +4,7 @@ import shortid from "shortid";
 import Home from "./Components/Home"
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
-import  Splash from "./Components/Splash";
+import Splash from "./Components/Splash";
 
 class App extends React.Component {
   state = {
@@ -54,17 +54,18 @@ class App extends React.Component {
       },
       {
         id: shortid.generate(),
-        activity: "Play with Blocks",
+        activity: "Practice Piano",
         category: "creative",
         reward: 15,
       },
     ],
-    selectedCategories: []
+    selectedCategories: [],
+    chooseRandomActivity: []
   }
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({isShowingSplashScreen: false})
+      this.setState({ isShowingSplashScreen: false })
     }, 4000)
   }
 
@@ -81,21 +82,29 @@ class App extends React.Component {
       return { selectedCategories: newCategories }
     })
   }
-  
-  handleFilteredActivities = (id) => {
+
+  handleFilteredActivities = () => {
     // 1 get selectedCategories to a variable this.state.
     // 2 activities list array.filter
     // 3 return updated array that excludes activities that werent selected
     // 4 final array.math.random
     // update activities state to random selected activity
-      let newArray = []
-      this.state.activities.filter(item => {
-        
-        if (this.state.selectedCategories.includes(item.category)){
-          newArray.push(item)
-        } 
-      })
-      console.log(newArray)
+    let newArray = []
+    this.state.activities.filter(item => {
+
+      if (this.state.selectedCategories.includes(item.category)) {
+        newArray.push(item)
+      }
+    })
+    console.log(newArray)
+    let newActivityIndex = Math.floor(Math.random() * newArray.length)
+    let chosenActivity = newArray[newActivityIndex]
+
+    this.setState({chooseRandomActivity: chosenActivity})
+    console.log(chosenActivity)
+
+
+
   }
 
 
@@ -105,18 +114,19 @@ class App extends React.Component {
     }
     return (
       <>
-      
-      
+
+
         <Switch>
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
               onHandleCheckbox={this.handleCheckbox}
-              />
+            />
           </Route>
           <Route path="/generator">
             <Generator
-            onHandleFilteredActivities={this.handleFilteredActivities}/>
+              onHandleFilteredActivities={this.handleFilteredActivities}
+              chooseRandomActivity={this.state.chooseRandomActivity} />
           </Route>
         </Switch>
       </>
