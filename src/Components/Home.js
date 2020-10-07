@@ -19,7 +19,7 @@ function Home(props) {
         return(
         <> 
 
-        {<Splash>}
+        <Splash>
 
             <Headline>What types of activities would you like Jake to do today?</Headline>
             
@@ -37,7 +37,7 @@ function Home(props) {
             onChange={props.onHandleCheckbox}/>
             <Link to="/generator">Generator</Link>
 
-            {</Splash>}
+            </Splash>
            </>
         )
 
