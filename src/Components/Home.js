@@ -98,6 +98,9 @@ function Home(props) {
             <ToggleCheckbox type="checkbox" name="educational"
             defaultChecked={props.selectedCategories.includes('educational')}
             onChange={props.onHandleCheckbox} />
+            <ToggleCheckbox Name="educational"
+            defaultChecked={props.selectedCategories.includes('physical')}
+            onChange={props.onHandleCheckbox}/>
             <Toggle><ToggleButton/></Toggle>
             </Category>
             </ToggleWrapper>
