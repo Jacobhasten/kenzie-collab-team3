@@ -90,18 +90,8 @@ justify-content: space-between;
 `;
 
 
-class Home extends React.Component {
-  
-  constructor(props) {
-    super(props)
-    this.state = {
-      toggleChecked: {
-      creative: {checked: false},
-      physical: {checked: false},
-      educational: {checked: false},},
-    }
-  }
-  render() {
+function Home(props) {
+
         return(
         <> 
         <GlobalStyles />
@@ -113,13 +103,13 @@ class Home extends React.Component {
             <CategoryList>
             <Category><p>Creative Activities</p>
             <input type="checkbox" name="creative" 
-            defaultChecked={this.props.selectedCategories.includes('creative')}
-            onChange={this.props.onHandleCheckbox}/>
+            defaultChecked={props.selectedCategories.includes('creative')}
+            onChange={props.onHandleCheckbox}/>
             </Category>
             <Category><p>Physical Acitivities</p>
             <input type="checkbox" name="physical"
-            defaultChecked={this.props.selectedCategories.includes('physical')}
-            onChange={this.props.onHandleCheckbox}/>
+            defaultChecked={props.selectedCategories.includes('physical')}
+            onChange={props.onHandleCheckbox}/>
             </Category>
             <Category><p>Educational Acitivities</p>
             {
@@ -129,16 +119,16 @@ class Home extends React.Component {
             // Having trouble with onChange actually changing the checked property of toggle
             }
             <Toggle name="educational"
-            checked={this.state.toggleChecked.educational.checked}
-            defaultChecked={this.props.selectedCategories.includes('educational')}
-            onChange={(value) => this.setState({educational: {checked: value}})}/>
+            checked={props.educationalChecked}
+            defaultChecked={props.selectedCategories.includes('educational')}
+            onChange={props.onHandleToggle}/>
             </Category>
             </CategoryList>
             <Link to="/generator">Generator</Link>
             {/* </Splash> */}
            </>
         );
-      }
+      
 }
 
 export default Home;
