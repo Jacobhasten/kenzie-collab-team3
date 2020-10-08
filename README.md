@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+If the string in this.state.activities.category is included in
+this.state.selectedCategories then add that activity to the unfilteredActivities list.
+If the string doesnt exist in the selectedCategories then filter those activities from entering the Unfiltered list.
+Add the random generator to pull a random activity from the unfilteredActivities list.
