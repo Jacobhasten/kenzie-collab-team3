@@ -5,6 +5,7 @@ import Home from "./Components/Home"
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
+import Timer from "./Components/Timer";
 
 class App extends React.Component {
   state = {
@@ -127,6 +128,7 @@ class App extends React.Component {
             <Generator
               onHandleFilteredActivities={this.handleFilteredActivities}
               chooseRandomActivity={this.state.chooseRandomActivity} />
+              <Timer/>
           </Route>
         </Switch>
       </>

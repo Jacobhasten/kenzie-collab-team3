@@ -10,6 +10,8 @@ function Generator(props) {
         <button onClick={props.onHandleFilteredActivities}>Pick Activity</button>
     <p>{props.chooseRandomActivity.activity}</p>
         </>
+      
+       
     )
 }
 
