@@ -75,6 +75,50 @@ const Headline = styled.h1`
 //         }}
 //     };
 //   `;
+const ToggleContainer = styled.label`
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    border-radius: 100px;
+    position: relative;
+
+    > input {
+      display: none;
+    }
+  `;
+const ToggleSlider = styled.span`
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: 45px;
+      transition: 0.4s;
+      background: gray;
+      border: 2px solid gray;
+      box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        transition: 0.2s;
+        border-radius: 50%;
+      }
+      `;
+const ToggleCheckbox = styled.input`
+  &:checked + ${ToggleSlider} {
+    background-color: ${colors.secondary.dark};
+    border: 2px solid ${colors.secondary.dark};
+    &:before {
+      transform: translateX(25px);
+      background-color: white;
+    }
+  }
+`;
 const CategoryList = styled.ul`
 margin: 40px auto;
 list-style: none;
@@ -102,26 +146,31 @@ function Home(props) {
             <Headline>What types of activities would you like Jake to do today?</Headline>
             <CategoryList>
             <Category><p>Creative Activities</p>
-            <input type="checkbox" name="creative" 
+            <ToggleContainer>
+            <ToggleCheckbox type='checkbox' name="creative"
             defaultChecked={props.selectedCategories.includes('creative')}
-            onChange={props.onHandleCheckbox}/>
+            onChange={props.onHandleCheckbox}
+            />
+            <ToggleSlider/>
+              </ToggleContainer>
             </Category>
             <Category><p>Physical Acitivities</p>
-            <input type="checkbox" name="physical"
+            <ToggleContainer>
+            <ToggleCheckbox type='checkbox' name="physical"
             defaultChecked={props.selectedCategories.includes('physical')}
-            onChange={props.onHandleCheckbox}/>
+            onChange={props.onHandleCheckbox}
+            />
+            <ToggleSlider/>
+              </ToggleContainer>
             </Category>
             <Category><p>Educational Acitivities</p>
-            {
-            //Old, functioning components ^^
-            //Test toggle component vv 
-
-            // Having trouble with onChange actually changing the checked property of toggle
-            }
-            <Toggle name="educational"
-            checked={props.educationalChecked}
+              <ToggleContainer>
+            <ToggleCheckbox type='checkbox' name="educational"
             defaultChecked={props.selectedCategories.includes('educational')}
-            onChange={props.onHandleToggle}/>
+            onChange={props.onHandleCheckbox}
+            />
+            <ToggleSlider/>
+              </ToggleContainer>
             </Category>
             </CategoryList>
             <Link to="/generator">Generator</Link>
