@@ -12,6 +12,7 @@ const Headline = styled.h1`
         width: 90%;
         margin:  20px auto;
         color: ${colors.primary.dark};
+        font-family:Risque;
     `;
 const ToggleWrapper = styled.div`
     &:checked,:label,:span {

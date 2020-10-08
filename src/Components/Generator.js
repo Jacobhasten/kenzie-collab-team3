@@ -1,4 +1,5 @@
 import React from 'react';
+import Magic_Ball from "./Magic_Ball";
 
 
 function Generator(props) {
@@ -7,11 +8,13 @@ function Generator(props) {
     
     return (
         <>
-        <button onClick={props.onHandleFilteredActivities}>Pick Activity</button>
+        <Magic_Ball/>
+        <button  onClick={props.onHandleFilteredActivities}>Pick Activity</button> 
     <p>{props.chooseRandomActivity.activity}</p>
-        </>
-      
-       
+    
+     
+     </>  
+
     )
 }
 
