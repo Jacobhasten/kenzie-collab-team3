@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 function Splash() {
 
   return (
+    <>
     <Spring from={{ opacity: 0 }} to={{ opacity: 1, mrginTop: 3 }} config={{ delay: 1000, duration: 1000 }}>
       {(props) => (
         <div className="background">
@@ -14,8 +15,13 @@ function Splash() {
             <img src={logo} />
           </div>
         </div>
+         
       )}
+      
     </Spring>
+
+
+</>
   );
 }
 
