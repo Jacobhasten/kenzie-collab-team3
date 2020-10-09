@@ -67,15 +67,36 @@ button {
   }
 }
 .background {
-  height:100vh;
-  width:100vw;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  background-image: url('./assets/Splash_Screen/Background.png');
+  background-image: url("./assets/Splash_Screen/Background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  img {
-    margin:20%;
+  object-fit: cover;
+  .logo {
+    position: relative;
+  }
+}
+
+.poolBall {
+  padding: 10px;
+  height: 70px;
+  width: 70px;
+  animation-name: poolballSpin;
+  animation-duration: 2s;
+  animation-direction: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes poolballSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

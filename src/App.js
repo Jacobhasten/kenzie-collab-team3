@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.scss";
 import shortid from "shortid";
-import Home from "./Components/Home"
+import Home from "./Components/Home";
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
-import  Splash from "./Components/Splash";
+import Splash from "./Components/Splash";
 
 class App extends React.Component {
   state = {
@@ -61,34 +61,36 @@ class App extends React.Component {
     ],
     selectedCategories: [],
     unfliteredActivities: this.handleFilteredActivities,
-  }
+  };
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({isShowingSplashScreen: false})
-    }, 4000)
+      this.setState({ isShowingSplashScreen: false });
+    }, 60000);
   }
 
-  handleCheckbox = event => {
+  handleCheckbox = (event) => {
     let name = event.target.name;
     let isChecked = event.target.checked;
-    this.setState(state => {
-      let newCategories = []
+    this.setState((state) => {
+      let newCategories = [];
       if (isChecked) {
-        newCategories = [...state.selectedCategories, name]
+        newCategories = [...state.selectedCategories, name];
       } else {
-        newCategories = state.selectedCategories.filter(category => category !== name)
+        newCategories = state.selectedCategories.filter(
+          (category) => category !== name
+        );
       }
-      return { selectedCategories: newCategories }
-    })
-  }
+      return { selectedCategories: newCategories };
+    });
+  };
   // handleFilteredActivities = (id) => {
   //   this.setState((state) => {
 
   //     let filteredList = state.activities.filter(item => {
   //       if (item.id === id && this.state.selectedCategories.includes(item.category)){
   //         return {...item, activity: item.activty}
-  //       } 
+  //       }
   //       return item
   //     })
   //     return {unfilteredActivities: filteredList}
@@ -96,25 +98,24 @@ class App extends React.Component {
   // }
   render() {
     if (this.state.isShowingSplashScreen) {
-      return <Splash />
+      return <Splash />;
     }
     return (
       <>
-      
-      
         <Switch>
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
               onHandleCheckbox={this.handleCheckbox}
-              handleFilteredActivities={this.handleFilteredActivities} />
+              handleFilteredActivities={this.handleFilteredActivities}
+            />
           </Route>
           <Route path="/generator">
-            <Generator/>
+            <Generator />
           </Route>
         </Switch>
       </>
-    )
+    );
   }
 }
 
