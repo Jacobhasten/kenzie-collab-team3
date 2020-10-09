@@ -66,18 +66,52 @@ button {
     background: gray;
   }
 }
-.background {
-  height:100vh;
-  width:100vw;
-  margin: 0;
-  padding: 0;
-  background-image: url('./assets/Splash_Screen/Background.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  img {
-    margin:20%;
+
+@media screen and (min-width: 320px) {
+  .background {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url("./assets/Splash_Screen/Background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    .logo {
+      display: flex;
+      margin-left: 15%;
+      padding-top: 55%;
+    }
   }
+
+  .loadingContainer {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15%;
+  }
+
+  .poolBall {
+    padding: 15px;
+    height: 20%;
+    width: 20%;
+    animation-name: poolballSpin;
+    animation-duration: 3s;
+    animation-direction: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 20;
+  }
+
+  @keyframes poolballSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+} ;
+
 }
 .magic-ball:hover{
   animation: shake 0.12s;
@@ -98,3 +132,4 @@ button {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
