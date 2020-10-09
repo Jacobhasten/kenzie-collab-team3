@@ -5,6 +5,8 @@ import Home from "./Components/Home";
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
+import Timer from "./Components/Timer";
+
 
 class App extends React.Component {
   state = {
@@ -54,20 +56,21 @@ class App extends React.Component {
       },
       {
         id: shortid.generate(),
-        activity: "Play with Blocks",
+        activity: "Practice Piano",
         category: "creative",
         reward: 15,
       },
     ],
     selectedCategories: [],
-    unfliteredActivities: this.handleFilteredActivities,
-  };
+    chooseRandomActivity: []
+  }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isShowingSplashScreen: false });
     }, 10000);
-  }
+
+
 
   handleCheckbox = (event) => {
     let name = event.target.name;
@@ -81,21 +84,35 @@ class App extends React.Component {
           (category) => category !== name
         );
       }
-      return { selectedCategories: newCategories };
-    });
-  };
-  // handleFilteredActivities = (id) => {
-  //   this.setState((state) => {
+      return { selectedCategories: newCategories }
+    })
+  }
 
-  //     let filteredList = state.activities.filter(item => {
-  //       if (item.id === id && this.state.selectedCategories.includes(item.category)){
-  //         return {...item, activity: item.activty}
-  //       }
-  //       return item
-  //     })
-  //     return {unfilteredActivities: filteredList}
-  //   })
-  // }
+  handleFilteredActivities = () => {
+    // 1 get selectedCategories to a variable this.state.
+    // 2 activities list array.filter
+    // 3 return updated array that excludes activities that werent selected
+    // 4 final array.math.random
+    // update activities state to random selected activity
+    let newArray = []
+    this.state.activities.filter(item => {
+
+      if (this.state.selectedCategories.includes(item.category)) {
+        newArray.push(item)
+      }
+    })
+    console.log(newArray)
+    let newActivityIndex = Math.floor(Math.random() * newArray.length)
+    let chosenActivity = newArray[newActivityIndex]
+
+    this.setState({chooseRandomActivity: chosenActivity})
+    console.log(chosenActivity)
+
+
+
+  }
+
+
   render() {
     if (this.state.isShowingSplashScreen) {
       return <Splash />;
@@ -107,11 +124,13 @@ class App extends React.Component {
             <Home
               selectedCategories={this.state.selectedCategories}
               onHandleCheckbox={this.handleCheckbox}
-              handleFilteredActivities={this.handleFilteredActivities}
             />
           </Route>
           <Route path="/generator">
-            <Generator />
+            <Generator
+              onHandleFilteredActivities={this.handleFilteredActivities}
+              chooseRandomActivity={this.state.chooseRandomActivity} />
+              <Timer/>
           </Route>
         </Switch>
       </>
