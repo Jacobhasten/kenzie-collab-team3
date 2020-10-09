@@ -1,86 +1,42 @@
-import React from "react";
+import React from "react"
 import "../App.scss";
-import shortid from "shortid";
+import styled from "styled-components";
+import { colors } from "./Styles";
+import Nav from "./Nav.js";
+import {Link} from "react-router-dom";
+import Splash from './Splash';
 
-class Home extends React.Component {
-  state = {
-    activities: [
-      {
-        id: shortid.generate(),
-        activity: "30 minutes of Reading",
-        category: "Educational Activity",
-        reward: 20,
-      },
-      {
-        id: shortid.generate(),
-        activity: "30 minutes of Math",
-        category: "Educational Activity",
-        reward: 20,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Do a puzzle",
-        category: "Educational Activity",
-        reward: 20,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Do 15 Jumping Jacks",
-        category: "physical",
-        reward: 10,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Stretch for 15 minutes",
-        category: "physical",
-        reward: 10,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Spend 1 hour coloring",
-        category: "creative",
-        reward: 15,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Play with Blocks for 1 hour",
-        category: "creative",
-        reward: 20,
-      },
-      {
-        id: shortid.generate(),
-        activity: "Play with Blocks",
-        category: "creative",
-        reward: 15,
-      },
-    ],
-    selectedCategories: [],
-  };
+const Headline = styled.h1`
+        text-align: center;
+        width: 90%;
+        margin:  20px auto;
+        color: ${colors.primary.dark};
+    `;
 
-  handleCheckbox = (event) => {
-    let name = event.target.name;
-    let isChecked = event.target.isChecked;
+function Home(props) {
+        
+    
+        return(
+        <> 
+        
+            <Headline>What types of activities would you like Jake to do today?</Headline>
+            
+            <p>Creative Activities</p>
+            <input type="checkbox" name="creative" 
+            defaultChecked={props.selectedCategories.includes('creative')}
+            onChange={props.onHandleCheckbox}/>
+            <p>Physical Acitivities</p>
+            <input type="checkbox" name="physical"
+            defaultChecked={props.selectedCategories.includes('physical')}
+            onChange={props.onHandleCheckbox}/>
+            <p>Educational Acitivities</p>
+            <input type="checkbox" name="educational"
+            defaultChecked={props.selectedCategories.includes('educational')}
+            onChange={props.onHandleCheckbox}/>
+            <Link to="/generator">Generator</Link>
+           </>
+        )
 
-    this.setState((state) => {
-      if (isChecked) {
-      }
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <h1>What types of activities would you like Jake to do today?</h1>
-
-        <p>Creative Activities</p>
-        <input type="checkbox" name="creative" />
-        <p>Physical Acitivities</p>
-        <input type="checkbox" name="physical" />
-        <p>Educational Acitivities</p>
-        <input type="checkbox" name="educational" />
-      </>
-    );
-  }
 }
 
 export default Home;
