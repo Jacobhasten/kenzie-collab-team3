@@ -77,14 +77,22 @@ button {
   background-size: cover;
   object-fit: cover;
   .logo {
-    position: relative;
+    display: flex;
+    margin-left: 15%;
+    padding-top: 55%;
   }
 }
 
+.loadingContainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15%;
+}
+
 .poolBall {
-  padding: 10px;
-  height: 70px;
-  width: 70px;
+  padding: 15px;
+  height: 20%;
+  width: 20%;
   animation-name: poolballSpin;
   animation-duration: 2s;
   animation-direction: forwards;
