@@ -15,7 +15,7 @@ const NavButton = styled.button`
   background: none;
   display: flex;
   flex-flow: column nowrap;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 0;
   justify-content: space-around;
   position: absolute;

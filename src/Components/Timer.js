@@ -4,6 +4,23 @@ import styled from 'styled-components';
 import { colors } from './Styles';
 import { GlobalStyles } from './Styles';
 
+const TimerWrapper = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+`;
+
+const TimerNumbers = styled.h1`
+    margin: auto;
+    text-align: center;
+`;
+
+const TimerText = styled.h2`
+    margin: auto;
+    text-align: center;
+`;
+
 const TimerButton = styled.button`
     font-family: 'Grandstander', cursive;
     font-weight: 600;
@@ -55,14 +72,14 @@ export default class Timer extends Component {
     render() {
         const { minutes, seconds } = this.state
         return (
-            <div>
+            <TimerWrapper>
             <GlobalStyles />
                 { minutes === 0 && seconds === 0
-                    ? <h1>Times up!</h1>
-                    : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                    ? <TimerText>Times up!</TimerText>
+                    : <><TimerText>Time Remaining: </TimerText><TimerNumbers>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</TimerNumbers></>
                 }
                 <TimerButton>Start Timer</TimerButton>
-            </div>
+            </TimerWrapper>
         )
     }
 }
