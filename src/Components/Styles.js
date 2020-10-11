@@ -5,7 +5,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-
+import Grandstander from '../fonts/Grandstander/static/Grandstander-Bold.ttf';
 export const colors = {
     primary: {
         main: '#1E96FC',
