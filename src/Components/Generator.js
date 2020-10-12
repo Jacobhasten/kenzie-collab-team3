@@ -8,8 +8,8 @@ function Generator(props) {
     
     return (
        <>
-        <Magic_Ball/>
-        <button onClick={props.onHandleFilteredActivities}>Pick Activity</button>
+        
+        <button onClick={props.onHandleFilteredActivities}><Magic_Ball/></button>
     <p>{props.chooseRandomActivity.activity}</p>
        
      </>
