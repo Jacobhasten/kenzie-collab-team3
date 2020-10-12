@@ -174,7 +174,7 @@ function Home(props) {
               </ToggleContainer>
             </Category>
             </CategoryList>
-            <Link to="/generator">Generator</Link>
+            <Link to="/generator">Start Game</Link>
             {/* </Splash> */}
            </>
         );
