@@ -2,6 +2,9 @@ import React from "react";
 import bxLogOut from "@iconify/icons-bx/bx-log-out"; //This is the log-out icon
 import playCircle from "@iconify/icons-fa-regular/play-circle"; //This is the Home icon
 import Add_Activity_Icon from "../assets/Footer_Icons/Add_Activity_Icon_png.png";
+import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.png";
+import Home_Icon from "../assets/Footer_Icons/Home_Icon.png";
+import Log_Out_Icon from "../assets/Footer_Icons/Log_Out.png";
 import { Icon, InlineIcon } from "@iconify/react";
 import styled from "styled-components";
 import { colors } from "./Styles.js";
@@ -17,18 +20,18 @@ const NavButton = styled.button`
   flex-flow: column nowrap;
   margin: 30px auto;
   padding: 0;
-  justify-content: space-around;
   position: absolute;
-  width: fit-content;
+  width: 70px;
   height: 70px;
   font-family: "Grandstander", cursive;
   text-transform: uppercase;
   text-align: center;
+  place-self: center;
 `;
 const NavButtonIcon = styled.img`
   margin: auto;
-  width: 60px;
-  height: 60px;
+  justify-self: center;
+  align-self: center;
 `;
 const NavFooter = styled.footer`
   width: 100%;
@@ -53,20 +56,20 @@ export default class Nav extends React.Component {
         {/* Page Code Goes Here */}
         <NavFooter>
           <NavButton style={{gridColumnStart: "1", gridColumnEnd: "2"}}>
-            <NavButtonIcon src={Add_Activity_Icon} />
+            <NavButtonIcon style={{height: "50px", width: "50px"}} src={Add_Activity_Icon} />
             Activities
           </NavButton>
           <NavButton style={{gridColumnStart: "2", gridColumnEnd: "3"}}>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+            <NavButtonIcon src={Home_Icon} />
+            Home
           </NavButton>
           <NavButton style={{gridColumnStart: "3", gridColumnEnd: "4"}}>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+            <NavButtonIcon style={{height: "50px", width: "50px"}} src={Rewards_Icon} />
+            Scores
           </NavButton>
           <NavButton style={{gridColumnStart: "4", gridColumnEnd: "5"}}>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+            <NavButtonIcon src={Log_Out_Icon} />
+            Log Out
           </NavButton>
           <FooterSvg />
         </NavFooter>
