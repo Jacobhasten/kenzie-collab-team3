@@ -34,12 +34,14 @@ function Generator(props) {
     
     return (
        <>
+
        <GlobalStyles />
        <Nav />
        <GeneratorWrapper>
-        <Magic_Ball/>
-        <LargeButton onClick={props.onHandleFilteredActivities}>Start Game</LargeButton>
-        <p>{props.chooseRandomActivity.activity}</p>
+         <button onClick={props.onHandleFilteredActivities}><Magic_Ball/></button>
+    <p>{props.chooseRandomActivity.activity}</p>
+        <LargeButton>Start Game</LargeButton>
+        
         </GeneratorWrapper>
         </>
       
