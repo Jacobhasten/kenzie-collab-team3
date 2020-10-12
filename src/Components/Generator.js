@@ -36,7 +36,6 @@ function Generator(props) {
        <>
 
        <GlobalStyles />
-       <Nav />
        <GeneratorWrapper>
          <button onClick={props.onHandleFilteredActivities}><Magic_Ball/></button>
     <p>{props.chooseRandomActivity.activity}</p>

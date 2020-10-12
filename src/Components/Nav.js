@@ -15,7 +15,7 @@ const NavButton = styled.button`
   background: none;
   display: flex;
   flex-flow: column nowrap;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 0;
   justify-content: space-around;
   position: absolute;
@@ -34,10 +34,9 @@ const NavFooter = styled.footer`
   width: 100%;
   position: fixed;
   bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-content: space-evenly;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1, 1fr;
 `;
 const HeaderStyle = styled.header`
   width: 100%;
@@ -53,19 +52,19 @@ export default class Nav extends React.Component {
         </HeaderStyle>
         {/* Page Code Goes Here */}
         <NavFooter>
-          <NavButton>
+          <NavButton style={{gridColumnStart: "1", gridColumnEnd: "2"}}>
             <NavButtonIcon src={Add_Activity_Icon} />
             Activities
           </NavButton>
-          <NavButton>
+          <NavButton style={{gridColumnStart: "2", gridColumnEnd: "3"}}>
             <NavButtonIcon src={Add_Activity_Icon} />
             Activities
           </NavButton>
-          <NavButton>
+          <NavButton style={{gridColumnStart: "3", gridColumnEnd: "4"}}>
             <NavButtonIcon src={Add_Activity_Icon} />
             Activities
           </NavButton>
-          <NavButton>
+          <NavButton style={{gridColumnStart: "4", gridColumnEnd: "5"}}>
             <NavButtonIcon src={Add_Activity_Icon} />
             Activities
           </NavButton>
