@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.scss";
 import shortid from "shortid";
-import Home from "./Components/Home"
+import Home from "./Components/Home";
 import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
 import Timer from "./Components/Timer";
+
 
 class App extends React.Component {
   state = {
@@ -66,19 +67,21 @@ class App extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ isShowingSplashScreen: false })
-    }, 4000)
+      this.setState({ isShowingSplashScreen: false });
+    }, 10000);
   }
 
-  handleCheckbox = event => {
+  handleCheckbox = (event) => {
     let name = event.target.name;
     let isChecked = event.target.checked;
-    this.setState(state => {
-      let newCategories = []
+    this.setState((state) => {
+      let newCategories = [];
       if (isChecked) {
-        newCategories = [...state.selectedCategories, name]
+        newCategories = [...state.selectedCategories, name];
       } else {
-        newCategories = state.selectedCategories.filter(category => category !== name)
+        newCategories = state.selectedCategories.filter(
+          (category) => category !== name
+        );
       }
       return { selectedCategories: newCategories }
     })
@@ -111,12 +114,10 @@ class App extends React.Component {
 
   render() {
     if (this.state.isShowingSplashScreen) {
-      return <Splash />
+      return <Splash />;
     }
     return (
       <>
-
-
         <Switch>
           <Route exact path="/">
             <Home
@@ -132,7 +133,7 @@ class App extends React.Component {
           </Route>
         </Switch>
       </>
-    )
+    );
   }
 }
 
