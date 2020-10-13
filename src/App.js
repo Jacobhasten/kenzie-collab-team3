@@ -7,6 +7,7 @@ import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
 import Timer from "./Components/Timer";
 import Nav from "./Components/Nav";
+import Scoreboard from "./Components/ScoreBoard";
 
 class App extends React.Component {
   state = {
@@ -121,8 +122,9 @@ class App extends React.Component {
     }
     return (
       <>
+      <Nav />
         <Switch>
-          <Nav />
+          
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
@@ -136,6 +138,9 @@ class App extends React.Component {
               selectedCategories={this.state.selectedCategories}
               ballIsActive={this.state.ballIsActive} />
               <Timer/>
+          </Route>
+          <Route>
+            <Scoreboard/>
           </Route>
         </Switch>
       </>
