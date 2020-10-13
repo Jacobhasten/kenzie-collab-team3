@@ -8,7 +8,6 @@ import Splash from "./Components/Splash";
 import Timer from "./Components/Timer";
 import Nav from "./Components/Nav";
 
-
 class App extends React.Component {
   state = {
     isShowingSplashScreen: true,
@@ -65,9 +64,10 @@ class App extends React.Component {
     selectedCategories: [],
     chooseRandomActivity: [],
     ballIsActive: false,
-    
-    
+  };
+
   }
+
 
   componentDidMount() {
     setTimeout(() => {
@@ -87,20 +87,22 @@ class App extends React.Component {
           (category) => category !== name
         );
       }
-      return { selectedCategories: newCategories }
-    })
-  }
+      return { selectedCategories: newCategories };
+    });
+  };
 
   
     
 
   handleFilteredActivities = () => {
+
     let newArray = []
     this.state.activities.filter(item => {
 
       if (this.state.selectedCategories.includes(item.category)) {
-        newArray.push(item)
+        newArray.push(item);
       }
+
     })
       let newActivityIndex = Math.floor(Math.random() * newArray.length)
       let chosenActivity = newArray[newActivityIndex]
@@ -109,6 +111,9 @@ class App extends React.Component {
     
   }
 
+    this.setState({ chooseRandomActivity: chosenActivity });
+    console.log(chosenActivity);
+  };
 
   render() {
     if (this.state.isShowingSplashScreen) {

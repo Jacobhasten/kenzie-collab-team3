@@ -65,6 +65,11 @@ button {
     margin-left: auto;
     margin-right: auto;
     padding-top: 15%;
+    animation-name: loadingContainer;
+    animation-duration: 3s;
+    animation-direction: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 20;
   }
 
   .poolBall {
@@ -86,7 +91,18 @@ button {
       transform: rotate(360deg);
     }
   }
-} ;
+
+
+  @keyframes loadingContainer {
+    0% {
+      transform: translate(-50%);
+    }
+    100% {
+      transform: translate(100%);
+    }
+  }
+}
+
 
 .magic-ball-active {
   animation: shake 0.12s;
@@ -94,19 +110,42 @@ button {
 
 }
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
 }
 
 .magic-ball {
   
 }
+
