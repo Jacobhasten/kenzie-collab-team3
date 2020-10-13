@@ -67,7 +67,7 @@ class App extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isShowingSplashScreen: false });
-    }, 10000);
+    }, 6000);
   }
 
   handleCheckbox = (event) => {

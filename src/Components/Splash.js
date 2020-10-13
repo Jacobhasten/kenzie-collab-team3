@@ -12,14 +12,13 @@ function Splash() {
   return (
     <Spring
       from={{ opacity: 0 }}
-      to={{ opacity: 1, mrginTop: 3 }}
+      to={{ opacity: 1, mrginTop: 2 }}
       config={{ delay: 1000, duration: 2000 }}
     >
       {(props) => (
         <div className="background">
           <div style={props}>
             <img className="logo" src={logo} alt="logo-rejoyce" />
-
             <div className="loadingContainer">
               <img
                 className="poolBall"
