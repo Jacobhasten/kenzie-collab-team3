@@ -2,8 +2,8 @@ import React from "react";
 import bxLogOut from "@iconify/icons-bx/bx-log-out"; //This is the log-out icon
 import playCircle from "@iconify/icons-fa-regular/play-circle"; //This is the Home icon
 import Add_Activity_Icon from "../assets/Footer_Icons/Add_Activity_Icon_png.png";
-import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.png";
-import Home_Icon from "../assets/Footer_Icons/Home_Icon.png";
+import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.svg";
+// import Home_Icon from "../assets/Footer_Icons/Home_Icon.png";
 import Log_Out_Icon from "../assets/Footer_Icons/Log_Out.png";
 import { Icon, InlineIcon } from "@iconify/react";
 import styled from "styled-components";
@@ -60,7 +60,7 @@ export default class Nav extends React.Component {
             Activities
           </NavButton>
           <NavButton style={{gridColumnStart: "2", gridColumnEnd: "3"}}>
-            <NavButtonIcon src={Home_Icon} />
+            <NavButtonIcon src={Rewards_Icon} />
             Home
           </NavButton>
           <NavButton style={{gridColumnStart: "3", gridColumnEnd: "4"}}>
