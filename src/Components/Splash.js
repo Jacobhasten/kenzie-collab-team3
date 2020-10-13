@@ -10,6 +10,7 @@ import { withRouter } from "react-router-dom";
 
 function Splash() {
   return (
+    <>
     <Spring
       from={{ opacity: 0 }}
       to={{ opacity: 1, mrginTop: 3 }}
