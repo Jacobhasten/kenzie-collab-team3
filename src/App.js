@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router";
 import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
 import Timer from "./Components/Timer";
+import Nav from "./Components/Nav";
 
 
 class App extends React.Component {
@@ -119,6 +120,7 @@ class App extends React.Component {
     return (
       <>
         <Switch>
+          <Nav />
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
