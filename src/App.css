@@ -106,7 +106,7 @@ button:focus, button:active {
   }
 }
 
-.magic-ball:hover {
+.magic-ball-active {
   -webkit-animation: shake 0.12s;
           animation: shake 0.12s;
   -webkit-animation-iteration-count: 25;
