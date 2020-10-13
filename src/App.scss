@@ -112,7 +112,7 @@ button {
   }
 } ;
 
-.magic-ball:hover{
+.magic-ball-active {
   animation: shake 0.12s;
   animation-iteration-count: 25;
 
@@ -131,3 +131,6 @@ button {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+.magic-ball {
+  
+}

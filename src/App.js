@@ -62,7 +62,10 @@ class App extends React.Component {
       },
     ],
     selectedCategories: [],
-    chooseRandomActivity: []
+    chooseRandomActivity: [],
+    ballIsActive: false,
+    
+    
   }
 
   componentDidMount() {
@@ -87,12 +90,10 @@ class App extends React.Component {
     })
   }
 
+  
+    
+
   handleFilteredActivities = () => {
-    // 1 get selectedCategories to a variable this.state.
-    // 2 activities list array.filter
-    // 3 return updated array that excludes activities that werent selected
-    // 4 final array.math.random
-    // update activities state to random selected activity
     let newArray = []
     this.state.activities.filter(item => {
 
@@ -100,15 +101,11 @@ class App extends React.Component {
         newArray.push(item)
       }
     })
-    console.log(newArray)
-    let newActivityIndex = Math.floor(Math.random() * newArray.length)
-    let chosenActivity = newArray[newActivityIndex]
-
-    this.setState({chooseRandomActivity: chosenActivity})
-    console.log(chosenActivity)
-
-
-
+      let newActivityIndex = Math.floor(Math.random() * newArray.length)
+      let chosenActivity = newArray[newActivityIndex]
+      this.setState({ballIsActive: true}, ()=>setTimeout(()=> 
+      this.setState({chooseRandomActivity: chosenActivity}), 3000))
+    
   }
 
 
@@ -128,7 +125,9 @@ class App extends React.Component {
           <Route path="/generator">
             <Generator
               onHandleFilteredActivities={this.handleFilteredActivities}
-              chooseRandomActivity={this.state.chooseRandomActivity} />
+              chooseRandomActivity={this.state.chooseRandomActivity}
+              selectedCategories={this.state.selectedCategories}
+              ballIsActive={this.state.ballIsActive} />
               <Timer/>
           </Route>
         </Switch>
