@@ -2,6 +2,9 @@ import React from "react";
 import bxLogOut from "@iconify/icons-bx/bx-log-out"; //This is the log-out icon
 import playCircle from "@iconify/icons-fa-regular/play-circle"; //This is the Home icon
 import Add_Activity_Icon from "../assets/Footer_Icons/Add_Activity_Icon_png.png";
+import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.png";
+import Home_Icon from "../assets/Footer_Icons/Home_Icon.png";
+import Log_Out_Icon from "../assets/Footer_Icons/Log_Out.png";
 import { Icon, InlineIcon } from "@iconify/react";
 import styled from "styled-components";
 import { colors } from "./Styles.js";
@@ -15,29 +18,28 @@ const NavButton = styled.button`
   background: none;
   display: flex;
   flex-flow: column nowrap;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 0;
-  justify-content: space-around;
   position: absolute;
-  width: fit-content;
+  width: 70px;
   height: 70px;
   font-family: "Grandstander", cursive;
   text-transform: uppercase;
   text-align: center;
+  place-self: center;
 `;
 const NavButtonIcon = styled.img`
   margin: auto;
-  width: 60px;
-  height: 60px;
+  justify-self: center;
+  align-self: center;
 `;
 const NavFooter = styled.footer`
   width: 100%;
   position: fixed;
   bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-content: space-evenly;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1, 1fr;
 `;
 const HeaderStyle = styled.header`
   width: 100%;
@@ -53,21 +55,21 @@ export default class Nav extends React.Component {
         </HeaderStyle>
         {/* Page Code Goes Here */}
         <NavFooter>
-          <NavButton>
-            <NavButtonIcon src={Add_Activity_Icon} />
+          <NavButton style={{gridColumnStart: "1", gridColumnEnd: "2"}}>
+            <NavButtonIcon style={{height: "50px", width: "50px"}} src={Add_Activity_Icon} />
             Activities
           </NavButton>
-          <NavButton>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+          <NavButton style={{gridColumnStart: "2", gridColumnEnd: "3"}}>
+            <NavButtonIcon src={Home_Icon} />
+            Home
           </NavButton>
-          <NavButton>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+          <NavButton style={{gridColumnStart: "3", gridColumnEnd: "4"}}>
+            <NavButtonIcon style={{height: "50px", width: "50px"}} src={Rewards_Icon} />
+            Scores
           </NavButton>
-          <NavButton>
-            <NavButtonIcon src={Add_Activity_Icon} />
-            Activities
+          <NavButton style={{gridColumnStart: "4", gridColumnEnd: "5"}}>
+            <NavButtonIcon src={Log_Out_Icon} />
+            Log Out
           </NavButton>
           <FooterSvg />
         </NavFooter>

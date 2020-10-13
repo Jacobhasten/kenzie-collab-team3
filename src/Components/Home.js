@@ -3,10 +3,8 @@ import "../App.scss";
 import styled from "styled-components";
 import { colors } from "./Styles";
 import { GlobalStyles } from "./Styles";
-import Nav from "./Nav.js";
 import {Link} from "react-router-dom";
 import Splash from './Splash';
-import Toggle from './Toggle';
 
 const Headline = styled.h1`
         text-align: center;
@@ -15,7 +13,7 @@ const Headline = styled.h1`
         color: ${colors.primary.dark};
         font-family:Risque;
     `;
-const ToggleContainer = styled.label`
+const Toggle = styled.label`
     display: inline-block;
     width: 50px;
     height: 25px;
@@ -79,38 +77,36 @@ function Home(props) {
         return(
         <> 
         <GlobalStyles />
-        <Nav />
-
 
         {/* <Splash> */}
             <Headline>What types of activities would you like Jake to do today?</Headline>
             <CategoryList>
             <Category><p>Creative Activities</p>
-            <ToggleContainer>
+            <Toggle>
             <ToggleCheckbox type='checkbox' name="creative"
             defaultChecked={props.selectedCategories.includes('creative')}
             onChange={props.onHandleCheckbox}
             />
             <ToggleSlider/>
-              </ToggleContainer>
+              </Toggle>
             </Category>
             <Category><p>Physical Acitivities</p>
-            <ToggleContainer>
+            <Toggle>
             <ToggleCheckbox type='checkbox' name="physical"
             defaultChecked={props.selectedCategories.includes('physical')}
             onChange={props.onHandleCheckbox}
             />
             <ToggleSlider/>
-              </ToggleContainer>
+              </Toggle>
             </Category>
             <Category><p>Educational Acitivities</p>
-              <ToggleContainer>
+              <Toggle>
             <ToggleCheckbox type='checkbox' name="educational"
             defaultChecked={props.selectedCategories.includes('educational')}
             onChange={props.onHandleCheckbox}
             />
             <ToggleSlider/>
-              </ToggleContainer>
+              </Toggle>
             </Category>
             </CategoryList>
             <Link to="/generator">Generator</Link>
