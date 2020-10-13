@@ -7,7 +7,6 @@ import Generator from "./Components/Generator";
 import Splash from "./Components/Splash";
 import Timer from "./Components/Timer";
 
-
 class App extends React.Component {
   state = {
     isShowingSplashScreen: true,
@@ -62,15 +61,14 @@ class App extends React.Component {
       },
     ],
     selectedCategories: [],
-    chooseRandomActivity: []
-  }
+    chooseRandomActivity: [],
+  };
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isShowingSplashScreen: false });
     }, 10000);
-
-
+  }
 
   handleCheckbox = (event) => {
     let name = event.target.name;
@@ -84,9 +82,9 @@ class App extends React.Component {
           (category) => category !== name
         );
       }
-      return { selectedCategories: newCategories }
-    })
-  }
+      return { selectedCategories: newCategories };
+    });
+  };
 
   handleFilteredActivities = () => {
     // 1 get selectedCategories to a variable this.state.
@@ -94,24 +92,19 @@ class App extends React.Component {
     // 3 return updated array that excludes activities that werent selected
     // 4 final array.math.random
     // update activities state to random selected activity
-    let newArray = []
-    this.state.activities.filter(item => {
-
+    let newArray = [];
+    this.state.activities.filter((item) => {
       if (this.state.selectedCategories.includes(item.category)) {
-        newArray.push(item)
+        newArray.push(item);
       }
-    })
-    console.log(newArray)
-    let newActivityIndex = Math.floor(Math.random() * newArray.length)
-    let chosenActivity = newArray[newActivityIndex]
+    });
+    console.log(newArray);
+    let newActivityIndex = Math.floor(Math.random() * newArray.length);
+    let chosenActivity = newArray[newActivityIndex];
 
-    this.setState({chooseRandomActivity: chosenActivity})
-    console.log(chosenActivity)
-
-
-
-  }
-
+    this.setState({ chooseRandomActivity: chosenActivity });
+    console.log(chosenActivity);
+  };
 
   render() {
     if (this.state.isShowingSplashScreen) {
@@ -129,8 +122,9 @@ class App extends React.Component {
           <Route path="/generator">
             <Generator
               onHandleFilteredActivities={this.handleFilteredActivities}
-              chooseRandomActivity={this.state.chooseRandomActivity} />
-              <Timer/>
+              chooseRandomActivity={this.state.chooseRandomActivity}
+            />
+            <Timer />
           </Route>
         </Switch>
       </>
