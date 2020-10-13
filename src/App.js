@@ -67,13 +67,13 @@ class App extends React.Component {
     ballIsActive: false,
   };
 
-  }
+
 
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isShowingSplashScreen: false });
-    }, 10000);
+    }, 5000);
   }
 
   handleCheckbox = (event) => {
@@ -112,9 +112,6 @@ class App extends React.Component {
     
   }
 
-    this.setState({ chooseRandomActivity: chosenActivity });
-    console.log(chosenActivity);
-  };
 
   render() {
     if (this.state.isShowingSplashScreen) {
@@ -146,6 +143,6 @@ class App extends React.Component {
       </>
     );
   }
-}
 
+}
 export default App;

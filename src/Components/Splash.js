@@ -52,6 +52,7 @@ function Splash() {
         </div>
       )}
     </Spring>
+    </>
   );
 }
 

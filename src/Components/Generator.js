@@ -56,7 +56,7 @@ function Generator(props) {
          className={props.ballIsActive ? "magic-ball-active" : "magic-ball"}>
         <MysticIcon src ={Magic} alt="magic 8 ball character" />
          </MysticIconWrapper>
-    <p>{props.chooseRandomActivity.activity}</p>
+    <h2>{props.chooseRandomActivity.activity}</h2>
         <LargeButton>Start Game</LargeButton>
         
         </GeneratorWrapper>
