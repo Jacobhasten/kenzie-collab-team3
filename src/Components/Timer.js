@@ -14,11 +14,13 @@ const TimerWrapper = styled.div`
 const TimerNumbers = styled.h1`
     margin: auto;
     text-align: center;
+    color:${colors.primary.dark};
 `;
 
 const TimerText = styled.h2`
     margin: auto;
     text-align: center;
+    color: ${colors.primary.dark};
 `;
 
 const TimerButton = styled.button`
@@ -26,7 +28,7 @@ const TimerButton = styled.button`
     font-weight: 600;
     font-size: 22px;
     text-transform: uppercase;
-    color: black;
+    color: ${colors.primary.dark};
     background-color: ${colors.secondary.dark};
     border-radius: 15px;
     -webkit-box-shadow: 0px 6px 11px 0px rgba(199,199,199,1);
@@ -43,7 +45,7 @@ export default class Timer extends Component {
         seconds: 0,
     }
 
-    componentDidMount() {
+    timerToggle() {
         this.myInterval = setInterval(() => {
             const { seconds, minutes } = this.state
 
@@ -78,7 +80,7 @@ export default class Timer extends Component {
                     ? <TimerText>Times up!</TimerText>
                     : <><TimerText>Time Remaining: </TimerText><TimerNumbers>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</TimerNumbers></>
                 }
-                <TimerButton>Start Timer</TimerButton>
+                <TimerButton onClick = {() => this.timerToggle()}>Start Timer</TimerButton>
             </TimerWrapper>
         )
     }
