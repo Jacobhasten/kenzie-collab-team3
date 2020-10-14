@@ -11,6 +11,7 @@ import { colors } from "./Styles.js";
 import { ReactComponent as HeaderSvg } from "../assets/Nav/Header.svg";
 import { ReactComponent as FooterSvg } from "../assets/Nav/Footer.svg";
 import { GlobalStyles } from "./Styles.js";
+import {Link} from "react-router-dom";
 
 const NavButton = styled.button`
   color: ${colors.secondary.main};
@@ -50,6 +51,10 @@ const HeaderStyle = styled.header`
   width: 100%;
 `;
 
+function refreshPage() {
+  window.location.reload(true);
+}
+
 export default class Nav extends React.Component {
   render() {
     return (
@@ -60,22 +65,22 @@ export default class Nav extends React.Component {
         </HeaderStyle>
         {/* Page Code Goes Here */}
         <NavFooter>
-          <NavButton style={{gridColumnStart: "1", gridColumnEnd: "2"}}>
+          <Link style={{gridColumnStart: "1", gridColumnEnd: "2"}}><NavButton >
             <NavButtonIcon style={{height: "50px", width: "50px"}} src={Add_Activity_Icon} />
             <NavButtonText>Activities</NavButtonText>
-          </NavButton>
-          <NavButton style={{gridColumnStart: "2", gridColumnEnd: "3"}}>
+          </NavButton></Link>
+          <Link to="/" style={{gridColumnStart: "2", gridColumnEnd: "3"}}><NavButton >
             <NavButtonIcon src={Home_Icon} />
             <NavButtonText>Home</NavButtonText>
-          </NavButton>
-          <NavButton style={{gridColumnStart: "3", gridColumnEnd: "4"}}>
+          </NavButton></Link>
+          <Link to="/scoreboard" style={{gridColumnStart: "3", gridColumnEnd: "4"}}><NavButton >
             <NavButtonIcon style={{height: "50px", width: "50px"}} src={Rewards_Icon} />
             <NavButtonText>Scores</NavButtonText>
-          </NavButton>
-          <NavButton style={{gridColumnStart: "4", gridColumnEnd: "5"}}>
+          </NavButton></Link>
+          <Link to="./refresh" style={{gridColumnStart: "4", gridColumnEnd: "5"}}><NavButton >
             <NavButtonIcon src={Log_Out_Icon} />
-            <NavButtonText>Log Out</NavButtonText>
-          </NavButton>
+            <NavButtonText >Log Out</NavButtonText>
+          </NavButton></Link>
           <FooterSvg style={{justifySelf: "start"}} />
         </NavFooter>
       </>

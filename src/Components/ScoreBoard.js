@@ -1,47 +1,50 @@
 import React from "react";
+import { GlobalStyles } from "./Styles";
+import { colors } from "./Styles";
+import { Headline } from "./Styles";
+import {List} from "./Styles";
+import {ListItem} from "./Styles";
+import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.png";
 
-function ScoreBoard() {
+function ScoreBoard(props) {
   return (
     <div>
-      <h1>Rewards Scoreboard</h1>
-      <ul>
-        <li>
-          Jake..........350
+      <GlobalStyles />
+      <Headline>Rewards Scoreboard</Headline>
+      <List>
+        <ListItem>
+          Jake............350
           <img
-            src="./src/assets/images/IconRewards_png.png"
+            src={Rewards_Icon}
             alt="stars"
-            width="20"
-            height="20"
+            style={{height: "50px", width: "50px", margin: "0 10px"}}
           />
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           Peppa...........200
           <img
-            src="./src/assets/images/IconRewards_png.png"
+            src={Rewards_Icon}
             alt="stars"
-            width="20"
-            height="20"
+            style={{height: "50px", width: "50px", margin: "0 10px"}}
           />
-        </li>
-        <li>
-          Blue...........150
+        </ListItem>
+        <ListItem>
+          Blue..............150
           <img
-            src="./src/assets/images/IconRewards_png.png"
+            src={Rewards_Icon}
             alt="stars"
-            width="20"
-            height="20"
+            style={{height: "50px", width: "50px", margin: "0 10px"}}
           />
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           Mickey............50
           <img
-            src="./src/assets/images/IconRewards_png.png"
+            src={Rewards_Icon}
             alt="stars"
-            width="20"
-            height="20"
+            style={{height: "50px", width: "50px", margin: "0 10px"}}
           />
-        </li>
-      </ul>
+        </ListItem>
+      </List>
     </div>
   );
 }
