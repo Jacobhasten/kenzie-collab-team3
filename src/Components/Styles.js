@@ -5,7 +5,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import Grandstander from '../fonts/Grandstander/static/Grandstander-Bold.ttf';
+import GrandstanderBold from '../fonts/Grandstander/static/Grandstander-Bold.ttf';
+import Grandstander from '../fonts/Grandstander/static/Grandstander-Medium.ttf';
 export const colors = {
     primary: {
         main: '#1E96FC',
@@ -18,6 +19,18 @@ export const colors = {
     }
 }
 export const GlobalStyles = createGlobalStyle`
+@font-face {
+    font-family: Grandstander;
+    font-style: normal;
+    font-weight: 600;
+    src: url(${GrandstanderBold});
+  }
+  @font-face {
+    font-family: Grandstander;
+    font-style: normal;
+    font-weight: 400;
+    src: url(${Grandstander});
+  }
 body {
     margin: 0;
     padding: 0;
