@@ -10,7 +10,7 @@ function ScoreBoard(props) {
     <div>
       <GlobalStyles />
       <Headline>Rewards Scoreboard</Headline>
-      <List>
+      <List >
         <ListItem>
           Jake............350
           <img
