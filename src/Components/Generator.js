@@ -57,8 +57,7 @@ function Generator(props) {
         <MysticIcon src ={Magic} alt="magic 8 ball character" />
          </MysticIconWrapper>
     <h2>{props.chooseRandomActivity.activity}</h2>
-        <LargeButton>Start Game</LargeButton>
-        
+        <Link to="/timer"><LargeButton>Start Timer</LargeButton></Link>
         </GeneratorWrapper>
         </>
       
