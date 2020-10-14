@@ -4,15 +4,10 @@ import styled from "styled-components";
 import { colors } from "./Styles";
 import { GlobalStyles } from "./Styles";
 import {Link} from "react-router-dom";
+import { LargeButton } from "./Styles";
 import Splash from './Splash';
+import {Headline} from "./Styles";
 
-const Headline = styled.h1`
-        text-align: center;
-        width: 90%;
-        margin:  20px auto;
-        color: ${colors.primary.dark};
-        font-family:Risque;
-    `;
 const Toggle = styled.label`
     display: inline-block;
     width: 50px;
@@ -71,7 +66,6 @@ flex-flow: row;
 justify-content: space-between;
 `;
 
-
 function Home(props) {
 
         return(
@@ -109,7 +103,7 @@ function Home(props) {
               </Toggle>
             </Category>
             </CategoryList>
-            <Link to="/generator">Generator</Link>
+            <Link to="/generator" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><LargeButton>Start Game</LargeButton></Link>
             {/* </Splash> */}
            </>
         );

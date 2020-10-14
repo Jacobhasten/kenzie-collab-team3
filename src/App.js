@@ -68,8 +68,6 @@ class App extends React.Component {
   };
 
 
-
-
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isShowingSplashScreen: false });
@@ -138,8 +136,14 @@ class App extends React.Component {
           <Route path="/timer">
             <Timer />
           </Route>
-          <Route>
-            <Scoreboard />
+          <Route path="/scoreboard">
+            <Scoreboard/>
+          </Route>
+          <Route path="/refresh">
+            <Home
+              selectedCategories={this.state.selectedCategories}
+              onHandleCheckbox={this.handleCheckbox}
+            />
           </Route>
         </Switch>
       </>

@@ -6,28 +6,14 @@ import { colors } from "./Styles";
 import Magic from "../assets/images/magicball.png";
 import Nav from "./Nav";
 import { Link } from 'react-router-dom';
+import { TimerButton } from "./Styles";
+import {SmallHeadline} from "./Styles";
 
 const GeneratorWrapper = styled.div`
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
     justify-content: center;
-`;
-
-const LargeButton = styled.button`
-    color: black;
-    background-color: ${colors.secondary.dark};
-    border: none;
-    border-radius: 15px;
-    font-family: 'Grandstander', cursive;
-    font-weight: 600;
-    font-size: 22px;
-    text-transform: uppercase;
-    -webkit-box-shadow: 0px 6px 11px 0px rgba(199,199,199,1);
-    -moz-box-shadow: 0px 6px 11px 0px rgba(199,199,199,1);
-    box-shadow: 0px 6px 11px 0px rgba(199,199,199,1);
-    margin: auto;
-    height: 70px;
 `;
 
 const MysticIconWrapper = styled.div`
@@ -50,14 +36,14 @@ function Generator(props) {
        <>
 
        <GlobalStyles />
-       <GeneratorWrapper>
+       <GeneratorWrapper> 
          <MysticIconWrapper 
          onClick={props.onHandleFilteredActivities}
          className={props.ballIsActive ? "magic-ball-active" : "magic-ball"}>
         <MysticIcon src ={Magic} alt="magic 8 ball character" />
          </MysticIconWrapper>
-    <h2>{props.chooseRandomActivity.activity}</h2>
-        <Link to="/timer"><LargeButton>Start Timer</LargeButton></Link>
+        <SmallHeadline style={{marginTop: "0"}}>{props.chooseRandomActivity.activity}</SmallHeadline>
+        <Link to="/timer" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><TimerButton>Start This Activity</TimerButton></Link>
         </GeneratorWrapper>
         </>
       
@@ -66,8 +52,9 @@ function Generator(props) {
    else {
        return (
         <>
-        <p>Please choose at least one catergory</p>
-        <Link to="/">here</Link>
+        <GlobalStyles/>
+        <SmallHeadline style={{marginTop: "30%"}}>Please choose at least one category</SmallHeadline>
+        <Link to="/" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><TimerButton>Back</TimerButton></Link>
         </>
        )
        
