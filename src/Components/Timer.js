@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors } from './Styles';
 import { GlobalStyles } from './Styles';
 import { TimerButton } from "./Styles";
+import {Link} from "react-router-dom";
 
 const TimerWrapper = styled.div`
     display: flex;
@@ -30,14 +31,15 @@ const TimerText = styled.h2`
 
 export default class Timer extends Component {
     state = {
-        minutes: 15,
+        minutes: 1,
         seconds: 0,
+        timerActive: false
     }
 
     timerToggle() {
+        this.setState({timerActive: true})
         this.myInterval = setInterval(() => {
             const { seconds, minutes } = this.state
-
             if (seconds > 0) {
                 this.setState(({ seconds }) => ({
                     seconds: seconds - 1
@@ -54,7 +56,9 @@ export default class Timer extends Component {
                 }
             } 
         }, 1000)
-    }
+    } 
+    
+
 
     componentWillUnmount() {
         clearInterval(this.myInterval)
@@ -66,10 +70,11 @@ export default class Timer extends Component {
             <TimerWrapper>
             <GlobalStyles />
                 { minutes === 0 && seconds === 0
-                    ? <TimerText>Times up!</TimerText>
-                    : <><TimerText>Time Remaining: </TimerText><TimerNumbers>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</TimerNumbers></>
+                    ? <><TimerText>Times up!</TimerText>
+                    <Link to="/scoreboard" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><TimerButton>Finish</TimerButton></Link></>
+                    : <><TimerText>Time Remaining: </TimerText><TimerNumbers>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</TimerNumbers>
+                    <TimerButton onClick = {() => this.timerToggle()}>{this.state.timerActive === false ? "Start Timer": "Stop Timer"}</TimerButton></>
                 }
-                <TimerButton onClick = {() => this.timerToggle()}>Start Timer</TimerButton>
             </TimerWrapper>
         )
     }

@@ -33,14 +33,6 @@ button {
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-  &:hover {
-    background: black;
-  }
-  &:focus,
-  &:active {
-    outline: 0;
-    background: gray;
-  }
 }
 
 @media screen and (min-width: 320px) {
