@@ -1,10 +1,7 @@
 import React from 'react';
-import Magic_Ball from "./Magic_Ball";
 import styled from "styled-components";
 import { GlobalStyles } from "./Styles";
-import { colors } from "./Styles";
 import Magic from "../assets/images/magicball.png";
-import Nav from "./Nav";
 import { Link } from 'react-router-dom';
 import { TimerButton } from "./Styles";
 import {SmallHeadline} from "./Styles";

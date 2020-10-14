@@ -1,11 +1,8 @@
 import React from "react";
-import bxLogOut from "@iconify/icons-bx/bx-log-out"; //This is the log-out icon
-import playCircle from "@iconify/icons-fa-regular/play-circle"; //This is the Home icon
 import Add_Activity_Icon from "../assets/Footer_Icons/Add_Activity_Icon_png.png";
 import Rewards_Icon from "../assets/Footer_Icons/Icon_Rewards.png";
 import Home_Icon from "../assets/Footer_Icons/Home_Icon.png";
 import Log_Out_Icon from "../assets/Footer_Icons/Log_Out.png";
-import { Icon, InlineIcon } from "@iconify/react";
 import styled from "styled-components";
 import { colors } from "./Styles.js";
 import { ReactComponent as HeaderSvg } from "../assets/Nav/Header.svg";
@@ -51,9 +48,6 @@ const HeaderStyle = styled.header`
   width: 100%;
 `;
 
-function refreshPage() {
-  window.location.reload(true);
-}
 
 export default class Nav extends React.Component {
   render() {
@@ -65,7 +59,7 @@ export default class Nav extends React.Component {
         </HeaderStyle>
         {/* Page Code Goes Here */}
         <NavFooter>
-          <Link style={{gridColumnStart: "1", gridColumnEnd: "2"}}><NavButton >
+          <Link to="/" style={{gridColumnStart: "1", gridColumnEnd: "2"}}><NavButton >
             <NavButtonIcon style={{height: "50px", width: "50px"}} src={Add_Activity_Icon} />
             <NavButtonText>Activities</NavButtonText>
           </NavButton></Link>

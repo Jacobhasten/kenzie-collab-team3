@@ -1,8 +1,6 @@
 // If you haven't yet, install styled-components package
 //To use these, import this into your page, and use the variable names in place of your HTML tags
 //For more info, I found this article helpful-> https://www.robinwieruch.de/react-styled-components
-
-import React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import GrandstanderBold from '../fonts/Grandstander/static/Grandstander-Bold.ttf';

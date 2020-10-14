@@ -1,6 +1,5 @@
 import React from "react";
 import { GlobalStyles } from "./Styles";
-import { colors } from "./Styles";
 import { Headline } from "./Styles";
 import {List} from "./Styles";
 import {ListItem} from "./Styles";
