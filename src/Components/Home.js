@@ -5,7 +5,6 @@ import { colors } from "./Styles";
 import { GlobalStyles } from "./Styles";
 import {Link} from "react-router-dom";
 import { LargeButton } from "./Styles";
-import Splash from './Splash';
 import {Headline} from "./Styles";
 
 const Toggle = styled.label`
@@ -71,8 +70,6 @@ function Home(props) {
         return(
         <> 
         <GlobalStyles />
-
-        {/* <Splash> */}
             <Headline>What types of activities would you like Jake to do today?</Headline>
             <CategoryList>
             <Category><p>Creative Activities</p>
@@ -104,7 +101,6 @@ function Home(props) {
             </Category>
             </CategoryList>
             <Link to="/generator" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><LargeButton>Start Game</LargeButton></Link>
-            {/* </Splash> */}
            </>
         );
       

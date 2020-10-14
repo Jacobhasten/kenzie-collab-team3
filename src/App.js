@@ -99,7 +99,9 @@ class App extends React.Component {
     this.state.activities.filter(item => {
 
       if (this.state.selectedCategories.includes(item.category)) {
-        newArray.push(item);
+         return newArray.push(item);
+      } else {
+        return null
       }
 
     })

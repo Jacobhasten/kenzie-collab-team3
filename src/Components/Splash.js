@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Spring } from "react-spring/renderprops";
 import logo from "../assets/Splash_Screen/Rejoyce_ Logo.png";
 import blue_8ball_png from "../assets/8Ball_Loading_Icons/Blue_8ball_noshadow.png";
