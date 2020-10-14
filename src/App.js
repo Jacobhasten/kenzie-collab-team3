@@ -92,8 +92,8 @@ class App extends React.Component {
     });
   };
 
-  
-    
+
+
 
   handleFilteredActivities = () => {
 
@@ -105,11 +105,11 @@ class App extends React.Component {
       }
 
     })
-      let newActivityIndex = Math.floor(Math.random() * newArray.length)
-      let chosenActivity = newArray[newActivityIndex]
-      this.setState({ballIsActive: true}, ()=>setTimeout(()=> 
-      this.setState({chooseRandomActivity: chosenActivity}), 3000))
-    
+    let newActivityIndex = Math.floor(Math.random() * newArray.length)
+    let chosenActivity = newArray[newActivityIndex]
+    this.setState({ ballIsActive: true }, () => setTimeout(() =>
+      this.setState({ chooseRandomActivity: chosenActivity, ballIsActive: false }), 3000))
+
   }
 
 
@@ -119,9 +119,9 @@ class App extends React.Component {
     }
     return (
       <>
-      <Nav />
+        <Nav />
         <Switch>
-          
+
           <Route exact path="/">
             <Home
               selectedCategories={this.state.selectedCategories}
@@ -134,10 +134,12 @@ class App extends React.Component {
               chooseRandomActivity={this.state.chooseRandomActivity}
               selectedCategories={this.state.selectedCategories}
               ballIsActive={this.state.ballIsActive} />
-              <Timer/>
+          </Route>
+          <Route path="/timer">
+            <Timer />
           </Route>
           <Route>
-            <Scoreboard/>
+            <Scoreboard />
           </Route>
         </Switch>
       </>
