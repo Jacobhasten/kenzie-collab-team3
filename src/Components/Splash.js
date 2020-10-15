@@ -11,47 +11,47 @@ import { withRouter } from "react-router-dom";
 function Splash() {
   return (
     <>
-    <Spring
-      from={{ opacity: 0 }}
-      to={{ opacity: 1, mrginTop: 3 }}
-      config={{ delay: 1000, duration: 2000 }}
-    >
-      {(props) => (
-        <div className="background">
-          <div style={props}>
-            <img className="logo" src={logo} alt="logo-rejoyce" />
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1, mrginTop: 3 }}
+        config={{ delay: 1000, duration: 2000 }}
+      >
+        {(props) => (
+          <div className="background">
+            <div style={props}>
+              <img className="logo" src={logo} alt="logo-rejoyce" />
 
-            <div className="loadingContainer">
-              <img
-                className="poolBall"
-                src={blue_8ball_png}
-                alt="blue pool ball"
-              />
-              <img
-                className="poolBall"
-                src={darkblue_8ball_png}
-                alt="dark blue pool ball"
-              />
-              <img
-                className="poolBall"
-                src={yellow_8ball_png}
-                alt="yellow pool ball"
-              />
-              <img
-                className="poolBall"
-                src={lightblue_8ball_png}
-                alt="light blue pool ball"
-              />
-              <img
-                className="poolBall"
-                src={blue_8ball_png}
-                alt="blue pool ball"
-              />
+              <div className="loadingContainer">
+                <img
+                  className="poolBall"
+                  src={blue_8ball_png}
+                  alt="blue pool ball"
+                />
+                <img
+                  className="poolBall"
+                  src={darkblue_8ball_png}
+                  alt="dark blue pool ball"
+                />
+                <img
+                  className="poolBall"
+                  src={yellow_8ball_png}
+                  alt="yellow pool ball"
+                />
+                <img
+                  className="poolBall"
+                  src={lightblue_8ball_png}
+                  alt="light blue pool ball"
+                />
+                <img
+                  className="poolBall"
+                  src={blue_8ball_png}
+                  alt="blue pool ball"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </Spring>
+        )}
+      </Spring>
     </>
   );
 }
