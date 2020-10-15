@@ -56,6 +56,15 @@ margin: 40px auto;
 list-style: none;
 padding: 0;
 width: 80%;
+margin-bottom: 80px;
+
+@media (min-width: 768px) {
+  transform: scale(1.5);
+}
+
+@media (min-width: 1024px) {
+  transform: scale(1.75);
+}
 `;
 
 const Category = styled.li`

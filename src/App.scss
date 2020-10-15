@@ -229,3 +229,15 @@ button {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
+
+
+.nav {
+  @media (min-width: 768px) {
+    transform: scale(1.5);
+  }
+
+  @media (min-width: 1024px) {
+    transform: scale(2);
+  }
+}

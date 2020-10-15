@@ -12,6 +12,13 @@ const TimerWrapper = styled.div`
     margin: 30% auto;
     align-content: center;
     justify-content: center;
+    @media (min-width: 768px) {
+        margin: 40% auto;
+      }
+      
+      @media (min-width: 1024px) {
+        margin: 50% auto;
+      }
 `;
 
 const TimerNumbers = styled.h1`
@@ -19,12 +26,30 @@ const TimerNumbers = styled.h1`
     margin-bottom: 20px;
     text-align: center;
     color:${colors.primary.dark};
+    @media (min-width: 768px) {
+        margin: 20px auto;
+        margin-bottom: 40px;
+        transform: scale(1.25);
+      }
+      
+      @media (min-width: 1024px) {
+        margin-bottom: 60px;
+        transform: scale(1.5);
+      }
 `;
 
 const TimerText = styled.h2`
     margin: 10px auto;
     text-align: center;
     color: ${colors.primary.dark};
+    @media (min-width: 768px) {
+        margin: 20px auto;
+        transform: scale(1.25);
+      }
+      
+      @media (min-width: 1024px) {
+        transform: scale(1.5);
+      }
 `;
 
 
@@ -70,7 +95,7 @@ export default class Timer extends Component {
             <TimerWrapper>
             <GlobalStyles />
                 { minutes === 0 && seconds === 0
-                    ? <><TimerText>Times up!</TimerText>
+                    ? <><TimerText style={{marginBottom: '60px'}}>Times up!</TimerText>
                     <Link to="/scoreboard" style={{display: "flex", justifyContent: "center", textDecoration: "none"}}><TimerButton>Finish</TimerButton></Link></>
                     : <><TimerText>Time Remaining: </TimerText><TimerNumbers>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</TimerNumbers>
                     <TimerButton onClick = {() => this.timerToggle()}>{this.state.timerActive === false ? "Start Timer": "Stop Timer"}</TimerButton></>

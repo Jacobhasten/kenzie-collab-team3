@@ -37,7 +37,7 @@ const NavButtonIcon = styled.img`
   align-self: center;
 `;
 const NavFooter = styled.footer`
-  width: 100%;
+  width: 390px;
   position: fixed;
   bottom: 0;
   display: inline-grid;
@@ -55,10 +55,10 @@ export default class Nav extends React.Component {
       <>
         <GlobalStyles />
         <HeaderStyle>
-          <HeaderSvg />
+          <HeaderSvg  className="nav"/>
         </HeaderStyle>
         {/* Page Code Goes Here */}
-        <NavFooter>
+        <NavFooter  className="nav">
           <Link to="/" style={{gridColumnStart: "1", gridColumnEnd: "2"}}><NavButton >
             <NavButtonIcon style={{height: "50px", width: "50px"}} src={Add_Activity_Icon} />
             <NavButtonText>Activities</NavButtonText>
@@ -75,7 +75,7 @@ export default class Nav extends React.Component {
             <NavButtonIcon src={Log_Out_Icon} />
             <NavButtonText >Log Out</NavButtonText>
           </NavButton></Link>
-          <FooterSvg style={{justifySelf: "start"}} />
+          <FooterSvg style={{justifySelf: "start", width: "375px",}} />
         </NavFooter>
       </>
     );

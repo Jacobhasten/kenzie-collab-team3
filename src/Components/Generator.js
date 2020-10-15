@@ -23,6 +23,14 @@ const MysticIconWrapper = styled.div`
 const MysticIcon = styled.img`
     width: 80%;
     margin: auto;
+    @media (min-width: 768px) {
+        margin: 80px auto;
+        transform: scale(1.25);
+      }
+      
+      @media (min-width: 1024px) {
+        transform: scale(1.5);
+      }
 `;
 
 function Generator(props) {
