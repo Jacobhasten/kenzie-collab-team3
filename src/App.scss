@@ -39,7 +39,7 @@ button {
   height: auto;
   width: 100%;
   margin: 0;
-  padding-bottom: 15%;
+  padding-bottom: 100%;
   background-image: url("./assets/Splash_Screen/Background.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -47,14 +47,14 @@ button {
   .logo {
     display: flex;
     margin-left: 15%;
-    padding-top: 55%;
+    padding-top: 35%;
   }
 }
 
 .loadingContainer {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 15%;
+  padding-top: 25%;
   animation-name: loadingContainer;
   animation-duration: 3s;
   animation-direction: forwards;
