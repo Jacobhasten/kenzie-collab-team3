@@ -45,40 +45,41 @@ button {
 
 .background {
   height: auto;
-  width: 100%;
-  margin: 0;
-  padding-bottom: 237%;
+  width: 115%;
+  position: fixed;
+  padding-bottom: 100%;
   background-image: url("./assets/Splash_Screen/Background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   .logo {
     display: flex;
+    width: 60%;
     margin-left: 15%;
-    padding-top: 35%;
+    padding-top: 20%;
   }
 }
 
 .loadingContainer {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 15%;
+  padding-top: 50%;
   animation-name: loadingContainer;
   animation-duration: 3s;
   animation-direction: forwards;
   animation-timing-function: linear;
-  animation-iteration-count: 20;
+  animation-iteration-count: infinite;
 }
 
 .poolBall {
   padding: 15px;
-  height: 20%;
-  width: 20%;
+  height: 15%;
+  width: 15%;
   animation-name: poolballSpin;
   animation-duration: 3s;
   animation-direction: forwards;
   animation-timing-function: linear;
-  animation-iteration-count: 20;
+  animation-iteration-count: infinite;
 }
 
 @keyframes poolballSpin {
