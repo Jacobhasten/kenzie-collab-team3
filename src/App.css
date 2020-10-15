@@ -378,15 +378,15 @@ button {
 
 @media (min-width: 768px) {
   .nav {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
 @media (min-width: 1024px) {
   .nav {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -59,11 +59,11 @@ width: 80%;
 margin-bottom: 80px;
 
 @media (min-width: 768px) {
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 
 @media (min-width: 1024px) {
-  transform: scale(1.75);
+  transform: scale(1.5);
 }
 `;
 

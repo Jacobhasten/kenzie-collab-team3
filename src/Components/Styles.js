@@ -68,12 +68,12 @@ export const LargeButton = styled.button`
     box-shadow: 0px 6px 11px 0px rgba(199,199,199,1);
     height: 70px;
     @media (min-width: 768px) {
-        transform: scale(1.25);
+        transform: scale(1.1);
         margin-top: 20px;
       }
       
       @media (min-width: 1024px) {
-        transform: scale(1.5);
+        transform: scale(1.25);
         margin-top: 40px;
         box-shadow: none;
       }
@@ -94,11 +94,11 @@ export const TimerButton = styled.button`
     margin: auto;
     height: 50px;
     @media (min-width: 768px) {
-        transform: scale(1.5);
+        transform: scale(1.1);
       }
       
       @media (min-width: 1024px) {
-        transform: scale(1.75);
+        transform: scale(1.25);
         box-shadow: none;
       }
 `;
@@ -109,11 +109,11 @@ export const List = styled.ul`
     padding: 0;
     width: 80%;
     @media (min-width: 768px) {
-        transform: scale(1.5);
+        transform: scale(1.1);
       }
       
       @media (min-width: 1024px) {
-        transform: scale(1.75);
+        transform: scale(1.25);
       }
 `;
 
