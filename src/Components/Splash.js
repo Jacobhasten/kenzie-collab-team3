@@ -13,7 +13,7 @@ function Splash() {
     <>
       <Spring
         from={{ opacity: 0 }}
-        to={{ opacity: 1, mrginTop: 3 }}
+        to={{ opacity: 1 }}
         config={{ delay: 1000, duration: 2000 }}
       >
         {(props) => (
