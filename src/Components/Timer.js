@@ -55,7 +55,7 @@ const TimerText = styled.h2`
 
 export default class Timer extends Component {
     state = {
-        minutes: 1,
+        minutes: 15,
         seconds: 0,
         timerActive: false
     }

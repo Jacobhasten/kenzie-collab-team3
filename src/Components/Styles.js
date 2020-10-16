@@ -27,13 +27,9 @@ export const Headline = styled.h1`
         background-color: white;
         @media (min-width: 768px) {
             width: 100%;
-            transform: scale(1.25);
-            margin-bottom: 80px;
+            transform: scale(1.1);
+            margin-bottom: 40px;
             padding: 10px;
-          }
-          
-          @media (min-width: 1024px) {
-            transform: scale(1.5);
           }
     `;
 export const SmallHeadline = styled.h2`
@@ -73,8 +69,6 @@ export const LargeButton = styled.button`
       }
       
       @media (min-width: 1024px) {
-        transform: scale(1.25);
-        margin-top: 40px;
         box-shadow: none;
       }
 `;
@@ -98,7 +92,6 @@ export const TimerButton = styled.button`
       }
       
       @media (min-width: 1024px) {
-        transform: scale(1.25);
         box-shadow: none;
       }
 `;

@@ -27,10 +27,6 @@ const MysticIcon = styled.img`
         margin: 20px auto;
         transform: scale(1.1);
       }
-      
-      @media (min-width: 1024px) {
-        transform: scale(1.25);
-      }
 `;
 
 function Generator(props) {
